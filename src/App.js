@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import DetailsPage from './Components/DetailsPage'
+import "./App.css"
+export class App extends Component {
+  state = {
+    data : [{
+      "_id": "1",
+      "title": "Nike Shoes",
+      "src": [
+        "/image/img2.jpg",
+        "/image/img1.jpg",
+        "/image/img3.jpg",
+        "/image/img4.jpg",
+        ],
+      "description": "UI/UX designing, html css tutorials",
+      "content": "Welcome to our channel Dev AT. Here you can learn web designing, UI/UX designing, html css tutorials, css animations and css effects, javascript and jquery tutorials and related so on.",
+      "price": 23,
+      "colors":["red","black","crimson","teal"],
+      "count": 1
+      }],
+  }
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+  render() {
+    const {data} = this.state;
+    return (
+      <div className="app">
+        <DetailsPage data = {data}/>
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App
+
